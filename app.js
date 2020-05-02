@@ -23,6 +23,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.get('*',(req,res,next)=>{
   if(!req.secure){
     res.redirect('https://dev.triunionhealthcare.com'+req.url);
+    res.end();
   }
   console.log(req.secure);
   console.log(req.url);
