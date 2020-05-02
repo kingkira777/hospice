@@ -20,11 +20,9 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 
-app.get('*',(req,res,next)=>{
-  console.log(req.headers.host);
-  console.log(req.hostname);
-  console.log(req.url);
-  next();
+app.get('*',(req,res)=>{
+  res.redirect('https://'+req.hostname+req.url);
+  res.end();
 })
 
 app.use('/', indexRouter);
