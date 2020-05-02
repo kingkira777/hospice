@@ -21,12 +21,13 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 app.get('*',(req,res,next)=>{
-  // if(!req.secure){
-  //   res.redirect('https://dev.triunionhealthcare.com/');
-  //   res.end();
-  // }
+  if(!req.secure){
+    res.redirect('https://dev.triunionhealthcare.com'+req.url);
+    next();
+  }
   console.log(req.secure);
-  next();
+  console.log(req.url);
+  // next();
 });
 
 app.use('/', indexRouter);
