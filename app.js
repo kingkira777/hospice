@@ -20,10 +20,14 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 
-app.get('*',(req,res)=>{
-  res.redirect('https://'+req.hostname+req.url);
-  res.end();
-})
+app.get('*',(req,res,next)=>{
+  if(req.hostname === "127.0.0.1"){
+    next();
+  }else{
+    res.redirect('https://dev.triunionhealthcare.com');
+    res.end();
+  }
+});
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
