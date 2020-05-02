@@ -3,7 +3,12 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  if(!req.secure){
+    res.redirect('https://dev.triunionhealthcare.com'+req.url);
+    res.end();
+  }else{
+    res.render('index', { title: 'Express' });
+  }
 });
 
 module.exports = router;
