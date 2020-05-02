@@ -22,6 +22,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('*',(req,res,next)=>{
   console.log(req.headers.host);
+  console.log(req.hostname);
+  console.log(req.url);
   next();
 })
 
