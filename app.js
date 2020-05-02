@@ -21,10 +21,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 app.get('*',(req,res,next)=>{
-  if(req.hostname === "127.0.0.1"){
-    next();
-  }else{
-    res.redirect('https://dev.triunionhealthcare.com');
+  if(!req.secure){
+    res.redirect('https://dev.triunionhealthcare.com/');
     res.end();
   }
 });
