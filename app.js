@@ -59,9 +59,9 @@ app.use(function(err, req, res, next) {
 var httpServer = http.createServer(app);
 var httpsServer = https.createServer(credentials,app);
 
-httpServer.listen(8080,function(){
+httpServer.listen(3000,function(){
   console.log('Listening on port:'+ httpServer.address().port);
 });
-httpsServer.listen(8443,function(){
+httpsServer.listen(3443,function(){
   console.log('Listening on port:'+ httpsServer.address().port);
 });
