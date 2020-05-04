@@ -44,6 +44,8 @@ server.on('listening', onListening);
 httpsServer.listen(3008,function(){
   console.log('Https');
 });
+httpsServer.on('error',onError);
+httpsServer.on('listening',onListening);
 
 /**
  * Normalize a port into a number, string, or false.
