@@ -7,8 +7,10 @@ router.get('/', function(req, res, next) {
   if(ishttp === "http"){
     res.redirect('https://dev.triunionhealthcare.com/');
     res.end();
+  }else{
+    res.render('index', { title: 'Express' });
+    res.end();
   }
-  res.render('index', { title: 'Express' });
 });
 
 module.exports = router;
