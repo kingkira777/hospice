@@ -3,9 +3,25 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var http = require('http');
+var https = require('https');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+
+
+
+
+var pKey = fs.readFileSync('ssl/private.key', 'utf8');
+var cert = fs.readFileSync('ssl/certificate.crt', 'utf8');
+var ca = fs.readFileSync('ssl/ca_bundle.crt', 'utf8');
+
+
+var credentials = {
+  key : pKey,
+  cert : cert,
+  ca : ca
+};
 
 var app = express();
 
@@ -39,4 +55,13 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-module.exports = app;
+
+var httpServer = http.createServer(app);
+var httpsServer = https.createServer(credentials,app);
+
+httpServer.listen(8080,function(){
+  console.log('Listening on port:'+ httpServer.address().port);
+});
+httpsServer.listen(8443,function(){
+  console.log('Listening on port:'+ httpsServer.address().port);
+});
