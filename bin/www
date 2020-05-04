@@ -24,7 +24,6 @@ var credentials = {
  * Get port from environment and store in Express.
  */
 
-var port = normalizePort(process.env.PORT || '80');
 // app.set('port', port);
 
 /**
@@ -38,7 +37,7 @@ var httpsServer = https.createServer(credentials,app);
  * Listen on provided port, on all network interfaces.
  */
 
-server.listen(port,function(){
+server.listen(80,function(){
   console.log("http");
 });
 server.on('error', onError);
