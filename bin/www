@@ -40,14 +40,14 @@ var httpsServer = https.createServer(credentials,app);
 server.listen(80,function(){
   console.log("http");
 });
-server.on('error', onError);
-server.on('listening', onListening);
+// server.on('error', onError);
+// server.on('listening', onListening);
 
 httpsServer.listen(443,function(){
   console.log('Https');
 });
-httpsServer.on('error',onError);
-httpsServer.on('listening',onListening);
+// httpsServer.on('error',onError);
+// httpsServer.on('listening',onListening);
 
 /**
  * Normalize a port into a number, string, or false.
