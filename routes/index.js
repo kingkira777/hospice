@@ -5,12 +5,6 @@ var router = express.Router();
 router.get('/', function(req, res, next) {
   var ishttp = req.protocol;
   console.log(ishttp);
-  // if(ishttp === "http"){
-  //   res.redirect('https://dev.triunionhealthcare.com/');
-  //   res.end();
-  // }else{
-    
-  // }
   res.render('index', { title: 'Express' });
     res.end();
 });
