@@ -42,5 +42,10 @@ router.get('/mail',(req,res)=>{
 
 }); 
 
+router.get('/sample',(req,res)=>{
+  res.send('Sample Game');
+  res.end();
+});
+
 
 module.exports = router;
