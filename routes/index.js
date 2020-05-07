@@ -27,10 +27,10 @@ router.get('/mail',(req,res)=>{
 
 
     let info = await transporter.sendMail({
-      from: '"Fred Foo 👻" <foo@example.com>', // sender address
+      from: '"Triunionhealthcare" <support@triunionhealthcare.com>', // sender address
       to: "hsouleater@gmail.com", // list of receivers
       subject: "Hello ✔", // Subject line
-      text: "Hello world?", // plain text body
+      // text: "Hello world?", // plain text body
       html: "<b>Hello world?</b>" // html body
     });
 
