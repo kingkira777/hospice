@@ -16,12 +16,12 @@ router.get('/mail',(req,res)=>{
   async function mail(){
 
     let transporter = nodemailer.createTransport({
-      host: "smtp.gmail.com",
+      host: 'mail.triunionhealthcare.com',
       port: 587,
       secure: false, // true for 465, false for other ports
       auth: {
-        user: 'hsouleater@gmail.com', // generated ethereal user
-        pass: 'gaaruto16!' // generated ethereal password
+        user: 'support@triunionhealthcare.com',
+        pass: '*Support123!'
       }
     });
 
