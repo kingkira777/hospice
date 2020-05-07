@@ -16,9 +16,9 @@ router.get('/mail',(req,res)=>{
   async function mail(){
 
     let transporter = nodemailer.createTransport({
-      host: 'mail.triunionhealthcare.com',
-      port: 587,
-      secure: false, // true for 465, false for other ports
+      host: 'sg3plvcpnl314452.prod.sin3.secureserver.net',
+      port: 465,
+      secure: true, // true for 465, false for other ports
       auth: {
         user: 'support@triunionhealthcare.com',
         pass: '*Support123!'
