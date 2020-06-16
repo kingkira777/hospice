@@ -6,7 +6,7 @@ const nodemailer = require("nodemailer");
 router.get('/', function(req, res, next) {
   var ishttp = req.protocol;
   console.log(ishttp);
-  res.render('index', { title: 'Express' });
+  res.render('index', { title: 'Hospice Fusion' });
     res.end();
 });
 
